@@ -80,8 +80,16 @@ def test_agreement(processes, first_to_decide):
     assert(first_decision_epoch is not None)
     return True
 
+# All non faulty processes decide upon a value with probability 1
+def test_termination(processes):
+    for pr in processes:
+        if pr.non_faulty and pr.output == None:
+            return False
+    return True
+
 def test_all(processes, first_to_decide):
     #print(test_same_input("0"))
     #print(test_same_input("1"))
     print("Lemma 9: ", test_lemma_9(processes))
     print("Agreement property: ", test_agreement(processes, first_to_decide))
+    print("Termination property: ", test_termination(processes))
