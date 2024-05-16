@@ -1,6 +1,12 @@
 import threading
+#from fail_stop_agreement import agreement, Process, processes, first_to_decide, n
 
-n = 4
+def agreement():
+    pass
+class Process:
+    pass
+
+n = None
 
 def run_protocol(processes):
     threads = []
@@ -46,20 +52,11 @@ def get_round2_msgs(processes):
                 round2_msgs_per_epoch[msg.epoch-1].append(msg.message)      # epoch numbers start at 1 but list positions start at 0
     return round2_msgs_per_epoch
 
-def test_lemma_9():
-    processes = []
-
-    for i in range(0, n):
-        pr = Process(i, str(i%2))
-        processes.append(pr)
-
-    run_protocol(processes)
-
+def test_lemma_9(processes):
     # Pre-processing: get all round 2 messages per epoch
     round2_msgs_per_epoch = get_round2_msgs(processes)
     
     for epoch_msgs in round2_msgs_per_epoch:
-        print(epoch_msgs)
         ocurrences_0 = epoch_msgs.count("0")
         ocurrences_1 = epoch_msgs.count("1")
         if ocurrences_0 > 0 and ocurrences_1 > 0:
@@ -68,7 +65,7 @@ def test_lemma_9():
 # Agreement: Let e be the first epoch in which a processor decides. If processor P decides v in epoch e, 
  #           then by the end of epoch e + 1 all processors decide v.
 
-def test_agreement():
+def test_agreement(processes, first_to_decide):
     first_decision_epoch = None
     first_value = None
     for pr in processes:
@@ -80,10 +77,11 @@ def test_agreement():
     for pr in processes:
         if (pr.decision_epoch != first_decision_epoch and pr.decision_epoch !=  first_decision_epoch+1) or pr.output != first_value:
             return False
+    assert(first_decision_epoch is not None)
     return True
-def test_all():
+
+def test_all(processes, first_to_decide):
     #print(test_same_input("0"))
     #print(test_same_input("1"))
-    print(test_lemma_9())
-
-test_all()
+    print("Lemma 9: ", test_lemma_9(processes))
+    print("Agreement property: ", test_agreement(processes, first_to_decide))
