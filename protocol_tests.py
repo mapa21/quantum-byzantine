@@ -1,40 +1,15 @@
-import threading
-#from fail_stop_agreement import agreement, Process, processes, first_to_decide, n
-
-def agreement():
-    pass
-class Process:
-    pass
-
-n = None
-
-def run_protocol(processes):
-    threads = []
-
-    for i in range(0, n):
-        thr = threading.Thread(target=agreement, args=((processes[i],)))
-        threads.append(thr)
-    
-    for thr in threads:    
-        thr.start()
-
-    for thr in threads:
-        thr.join()
-def test_same_input(input):
-    processes = []
-
-    for i in range(0, n):
-        pr = Process(i, input)
-        processes.append(pr)
-
-    run_protocol(processes)
-
-    print("*******   SOLUTION:   *******")
+def test_validity(processes):
+    inputs = []
     for pr in processes:
-        print("process(", pr.id, ") = ", pr.output, " @epoch: ", pr.decision_epoch)
-        if pr.output != input or pr.decision_epoch != 1:
-            return False
-    print("-----------------------------")
+        inputs.append(pr.input_val)
+    assert(len(inputs) > 0)
+    common_val = inputs[0]
+    same_input = all(val == common_val for val in inputs)
+    
+    if same_input:
+        for pr in processes:
+            if pr.output != common_val or pr.decision_epoch != 1:
+                return False
     return True
 
 # Lemma 9
@@ -80,7 +55,7 @@ def test_agreement(processes, first_to_decide):
     assert(first_decision_epoch is not None)
     return True
 
-# All non faulty processes decide upon a value with probability 1
+# Termination: all non faulty processes decide upon a value with probability 1
 def test_termination(processes):
     for pr in processes:
         if pr.non_faulty and pr.output == None:
@@ -88,8 +63,15 @@ def test_termination(processes):
     return True
 
 def test_all(processes, first_to_decide):
-    #print(test_same_input("0"))
-    #print(test_same_input("1"))
-    print("Lemma 9: ", test_lemma_9(processes))
-    print("Agreement property: ", test_agreement(processes, first_to_decide))
-    print("Termination property: ", test_termination(processes))
+    lemma_9 = test_lemma_9(processes)
+    agreement = test_agreement(processes, first_to_decide)
+    termination = test_termination(processes)
+    validity = test_validity(processes)
+    tests = [lemma_9, agreement, termination, validity]
+
+    print("PASSED TESTS: ", tests.count(True), "/", len(tests))
+    print("Lemma 9: ", lemma_9)
+    print("Agreement: ", agreement)
+    print("Termination: ", termination)
+    print("Validity: ", validity)
+    print()
