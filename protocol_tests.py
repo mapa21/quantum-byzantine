@@ -1,3 +1,5 @@
+from globals import n
+
 def test_validity(processes):
     inputs = []
     for pr in processes:
@@ -7,33 +9,38 @@ def test_validity(processes):
     same_input = all(val == common_val for val in inputs)
     
     if same_input:
+        print("same input")
         for pr in processes:
             if pr.output != common_val or pr.decision_epoch != 1:
+                print("pr. ", pr.id, "output: ", pr.output, " common_val: ", common_val, "decision_e (should be 1): ", pr.decision_epoch)
                 return False
     return True
 
 # Lemma 9
 # During each epoch, both of the values 0 and 1 are never sent in any execution of round 2
 
-def get_round2_msgs(processes):
-    epochs_num = [pr.decision_epoch+1 for pr in processes]
+def get_round2_msgs(processes, broadcasted_messages):
+    epochs_num = [pr.decision_epoch+1 for pr in processes]      # decision_epoch is 1 less than the termination_epoch
     total_epochs = max(epochs_num)
+    print("total_epochs: ", total_epochs)
     
     round2_msgs_per_epoch = [[]] * total_epochs
 
-    for pr in processes:
-        for msg in pr.broadcasted_messages:
-            if msg.round == 2:
-                round2_msgs_per_epoch[msg.epoch-1].append(msg.message)      # epoch numbers start at 1 but list positions start at 0
+    for epoch in range(total_epochs):
+        round2_msgs_per_epoch[epoch] = [msg.message for msg in broadcasted_messages if msg.round == 2 and msg.epoch-1 == epoch]   
+        print(round2_msgs_per_epoch[epoch])
     return round2_msgs_per_epoch
 
-def test_lemma_9(processes):
+def test_lemma_9(processes, broadcasted_messages):
     # Pre-processing: get all round 2 messages per epoch
-    round2_msgs_per_epoch = get_round2_msgs(processes)
+    round2_msgs_per_epoch = get_round2_msgs(processes, broadcasted_messages)
+    print(round2_msgs_per_epoch)
     
     for epoch_msgs in round2_msgs_per_epoch:
+        print("round2_epoch_msgs: ", epoch_msgs)
         ocurrences_0 = epoch_msgs.count("0")
         ocurrences_1 = epoch_msgs.count("1")
+        print("ocurrences_0: ", ocurrences_0, "ocurrences_1: ", ocurrences_1)
         if ocurrences_0 > 0 and ocurrences_1 > 0:
             return False
     return True
@@ -48,8 +55,9 @@ def test_agreement(processes, first_to_decide):
             first_decision_epoch = pr.decision_epoch
             first_value = pr.output
             break
-    
+    print("first_decision_epoch: ", first_decision_epoch, " first_val: ", first_value)
     for pr in processes:
+        print("pr.decision_epoch: ", pr.decision_epoch, " output: ", pr.output)
         if (pr.decision_epoch != first_decision_epoch and pr.decision_epoch !=  first_decision_epoch+1) or pr.output != first_value:
             return False
     assert(first_decision_epoch is not None)
@@ -62,8 +70,8 @@ def test_termination(processes):
             return False
     return True
 
-def test_all(processes, first_to_decide):
-    lemma_9 = test_lemma_9(processes)
+def test_all(processes, first_to_decide, broadcasted_messages):
+    lemma_9 = test_lemma_9(processes, broadcasted_messages)
     agreement = test_agreement(processes, first_to_decide)
     termination = test_termination(processes)
     validity = test_validity(processes)
