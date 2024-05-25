@@ -45,7 +45,7 @@ def test_lemma_9(processes, broadcasted_messages):
             return False
     return True
 # Agreement: Let e be the first epoch in which a processor decides. If processor P decides v in epoch e, 
- #           then by the end of epoch e + 1 all processors decide v.
+#            then by the end of epoch e + 1 all processors decide v.
 
 def test_agreement(processes, first_to_decide):
     first_decision_epoch = None
@@ -58,6 +58,8 @@ def test_agreement(processes, first_to_decide):
     print("first_decision_epoch: ", first_decision_epoch, " first_val: ", first_value)
     for pr in processes:
         print("pr.decision_epoch: ", pr.decision_epoch, " output: ", pr.output)
+        if not pr.non_faulty:
+            continue
         if (pr.decision_epoch != first_decision_epoch and pr.decision_epoch !=  first_decision_epoch+1) or pr.output != first_value:
             return False
     assert(first_decision_epoch is not None)
