@@ -28,19 +28,19 @@ def get_round2_msgs(processes, broadcasted_messages):
 
     for epoch in range(total_epochs):
         round2_msgs_per_epoch[epoch] = [msg.message for msg in broadcasted_messages if msg.round == 2 and msg.epoch-1 == epoch]   
-        print(round2_msgs_per_epoch[epoch])
+        #print(round2_msgs_per_epoch[epoch])
     return round2_msgs_per_epoch
 
 def test_lemma_9(processes, broadcasted_messages):
     # Pre-processing: get all round 2 messages per epoch
     round2_msgs_per_epoch = get_round2_msgs(processes, broadcasted_messages)
-    print(round2_msgs_per_epoch)
+    print("round2_msgs_per_epoch: ", round2_msgs_per_epoch)
     
     for epoch_msgs in round2_msgs_per_epoch:
-        print("round2_epoch_msgs: ", epoch_msgs)
+        #print("round2_epoch_msgs: ", epoch_msgs)
         ocurrences_0 = epoch_msgs.count("0")
         ocurrences_1 = epoch_msgs.count("1")
-        print("ocurrences_0: ", ocurrences_0, "ocurrences_1: ", ocurrences_1)
+        #print("ocurrences_0: ", ocurrences_0, "ocurrences_1: ", ocurrences_1)
         if ocurrences_0 > 0 and ocurrences_1 > 0:
             return False
     return True
@@ -57,9 +57,9 @@ def test_agreement(processes, first_to_decide):
             break
     print("first_decision_epoch: ", first_decision_epoch, " first_val: ", first_value)
     for pr in processes:
-        print("pr.decision_epoch: ", pr.decision_epoch, " output: ", pr.output)
         if not pr.non_faulty:
             continue
+        print("pr.decision_epoch: ", pr.decision_epoch, " output: ", pr.output)
         if (pr.decision_epoch != first_decision_epoch and pr.decision_epoch !=  first_decision_epoch+1) or pr.output != first_value:
             return False
     assert(first_decision_epoch is not None)
