@@ -37,10 +37,8 @@ def test_lemma_9(processes, broadcasted_messages):
     print("round2_msgs_per_epoch: ", round2_msgs_per_epoch)
     
     for epoch_msgs in round2_msgs_per_epoch:
-        #print("round2_epoch_msgs: ", epoch_msgs)
         ocurrences_0 = epoch_msgs.count("0")
         ocurrences_1 = epoch_msgs.count("1")
-        #print("ocurrences_0: ", ocurrences_0, "ocurrences_1: ", ocurrences_1)
         if ocurrences_0 > 0 and ocurrences_1 > 0:
             return False
     return True
