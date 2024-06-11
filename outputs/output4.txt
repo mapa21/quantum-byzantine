@@ -1,0 +1,62 @@
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  2  | input:  0  | faulty:  False
+process( 2 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+process( 3 ) =  1  @epoch:  2  | input:  0  | faulty:  True
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 2 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 3 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 1 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 3 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 1 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 2 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 1 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 2 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 3 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+avg =  4.073481202125549  pstdev =  1.4431177573908829  stdev =  1.5211796817298266
+[5.349181890487671, 3.790006160736084, 2.72370982170105, 2.703260898590088, 5.958935260772705, 6.0436999797821045, 2.5488498210906982, 5.774262189865112, 3.1565465927124023, 2.686359405517578]

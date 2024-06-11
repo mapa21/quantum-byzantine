@@ -1,0 +1,122 @@
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 4 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 5 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 6 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 7 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 8 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 9 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 2 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 3 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 4 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 5 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 6 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 7 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 8 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 9 ) =  0  @epoch:  1  | input:  1  | faulty:  True
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 1 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 3 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 4 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 5 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 6 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+process( 7 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 8 ) =  0  @epoch:  2  | input:  0  | faulty:  False
+process( 9 ) =  0  @epoch:  2  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 4 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 5 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 6 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 7 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 8 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 9 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 1 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 2 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 4 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 5 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 6 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 7 ) =  0  @epoch:  1  | input:  1  | faulty:  True
+process( 8 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 9 ) =  0  @epoch:  1  | input:  1  | faulty:  True
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 1 ) =  0  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  0  @epoch:  1  | input:  1  | faulty:  False
+process( 3 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 4 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 5 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 6 ) =  0  @epoch:  1  | input:  1  | faulty:  False
+process( 7 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 8 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 9 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  True
+process( 1 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 2 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 4 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 5 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 6 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 7 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 8 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 9 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 1 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 4 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 5 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 6 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 7 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 8 ) =  1  @epoch:  1  | input:  1  | faulty:  False
+process( 9 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  0  @epoch:  1  | input:  1  | faulty:  True
+process( 1 ) =  0  @epoch:  1  | input:  1  | faulty:  False
+process( 2 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 3 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 4 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 5 ) =  0  @epoch:  1  | input:  0  | faulty:  True
+process( 6 ) =  0  @epoch:  1  | input:  1  | faulty:  False
+process( 7 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 8 ) =  0  @epoch:  1  | input:  0  | faulty:  False
+process( 9 ) =  0  @epoch:  1  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+*******   SOLUTION:   *******
+process( 0 ) =  1  @epoch:  2  | input:  0  | faulty:  False
+process( 1 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+process( 2 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 3 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+process( 4 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 5 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+process( 6 ) =  1  @epoch:  2  | input:  0  | faulty:  False
+process( 7 ) =  1  @epoch:  1  | input:  0  | faulty:  True
+process( 8 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+process( 9 ) =  1  @epoch:  2  | input:  1  | faulty:  False
+PASSED TESTS:  4 / 4
+avg =  10.58900797367096  pstdev =  3.4308072548713673  stdev =  3.6163883794744427
+[9.930160760879517, 15.50235390663147, 15.902659893035889, 7.866414785385132, 7.0816967487335205, 8.387837886810303, 8.739530563354492, 8.82481336593628, 7.9071125984191895, 15.747499227523804]
