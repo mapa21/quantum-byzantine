@@ -11,6 +11,7 @@ The agreement protocol is the main program to run and can be found under ```fail
 
 The ```visualization.ipynb``` file contains the neccesary code to plot the circuits and histograms used in this implementation.
 
-- [1] *Ben-Or, M., & Hassidim, A.* (2005, May). **Fast quantum Byzantine agreement**. In Proceedings of the thirty-seventh annual ACM symposium on Theory of computing (pp. 481-485).
+### References
+ [1] *Ben-Or, M., & Hassidim, A.* (2005, May). **Fast quantum Byzantine agreement**. In Proceedings of the thirty-seventh annual ACM symposium on Theory of computing (pp. 481-485).
 
 [^*]: Note that _n_ cannot excede 384 and with $n = 244$ processes it already takes on average 40 min to execute the whole agreement protocol.
